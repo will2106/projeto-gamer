@@ -1,0 +1,294 @@
+/* Mobile First */
+
+/********************* Header *********************/
+header[b-k45qj2qeu3] {
+  position: fixed;
+  /* apenas para referência dos menus */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  background-color: #1b1426;
+  font-size: 16px;
+}
+
+header .container-grid[b-k45qj2qeu3] {
+  width: 100%;
+}
+
+/* fixar o label por causa do alinhamento, efeito do inline +- 4px */
+header label[b-k45qj2qeu3] {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+/* esconde os elementos desnecessários no mobile */
+header .header-top[b-k45qj2qeu3],
+header h1 .title[b-k45qj2qeu3],
+.mostra-esconde-icones[b-k45qj2qeu3],
+header #mostra-esconde-navmenu[b-k45qj2qeu3],
+header #mostra-esconde-icones[b-k45qj2qeu3] {
+  display: none;
+}
+
+.header-flex[b-k45qj2qeu3] {
+}
+
+header .header-bottom[b-k45qj2qeu3] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header .header-bottom #logotipo[b-k45qj2qeu3] {
+  width: 120px;
+}
+
+/* mostra esconde menu social */
+header #mostra-esconde-navmenu:checked ~ .nav-bkg[b-k45qj2qeu3] {
+  left: 1px;
+}
+
+header .nav-bkg[b-k45qj2qeu3] {
+  position: fixed;
+  top: 60px;
+  left: -300px;
+  /* z-index: 2; */
+  width: 270px;
+  height: calc(100vh - 60px);
+  /* apagar */
+  padding: 1px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: left 0.4s;
+  border-radius: 5px;
+  /* border: 2px solid yellow; */
+}
+
+.header nav[b-k45qj2qeu3] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(27, 20, 38, 0.5),
+    rgba(27, 20, 38, 0.05)
+  );
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.header nav a[b-k45qj2qeu3] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 40px 0;
+  color: white;
+  font-family: Inter-Regular;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 2px solid #f9aa01;
+  transition: background-color 0.4s;
+}
+
+.header nav a:hover[b-k45qj2qeu3] {
+  background-color: #f9aa01;
+  border-bottom: 2px solid #1b1426;
+}
+
+/* aqui depois trocar para o link:active */
+.header nav a:last-of-type[b-k45qj2qeu3] {
+  border-bottom: none;
+}
+
+/* formatação nos dois últimos links - contato */
+.header nav a.phone-box[b-k45qj2qeu3],
+.header nav a.mail-box[b-k45qj2qeu3] {
+  font-size: 10px;
+}
+
+.header nav a.phone-box > img[b-k45qj2qeu3],
+.header nav a.mail-box > img[b-k45qj2qeu3] {
+  width: 18px;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+.header nav .social-box[b-k45qj2qeu3] {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.header nav .social-box img[b-k45qj2qeu3] {
+  margin-right: 25px;
+}
+
+.header nav .social-box img:last-of-type[b-k45qj2qeu3] {
+  margin-right: 0;
+}
+
+/* mostra esconde menu social */
+header #mostra-esconde-icones:checked ~ .icons-header-bkg[b-k45qj2qeu3] {
+  right: 1px;
+}
+
+/* Menu social do cabeçalho */
+header .icons-header-bkg[b-k45qj2qeu3] {
+  position: absolute;
+  top: 60px;
+  right: -70px;
+  width: 66px;
+  height: 170px;
+  padding: 1px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: 5px;
+  transition: right 0.4s;
+}
+
+header .icons-header[b-k45qj2qeu3] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(27, 20, 38, 0.5),
+    rgba(27, 20, 38, 0.05)
+  );
+  backdrop-filter: blur(2px);
+  border-radius: 5px;
+}
+
+header .icons-header img[b-k45qj2qeu3] {
+  width: 20px;
+}
+
+/* Medias Queries */
+
+@media screen and (min-width: 992px) {
+  .header[b-k45qj2qeu3] {
+    position: static;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .header label[b-k45qj2qeu3] {
+    display: none;
+  }
+
+  header .header-top[b-k45qj2qeu3] {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #f9aa01;
+  }
+
+  .header-top-flex[b-k45qj2qeu3] {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  header .header-top span[b-k45qj2qeu3] {
+    margin-right: 40px;
+    font-size: 0.8rem;
+    /* border: 1px solid white; */
+  }
+
+  header .header-top span img[b-k45qj2qeu3] {
+    margin-right: 10px;
+  }
+
+  header .header-top .social-box[b-k45qj2qeu3] {
+    margin-right: 0;
+  }
+
+  header .header-bottom[b-k45qj2qeu3] {
+    padding: 10px 0;
+  }
+
+  /* Menu */
+  header .nav-bkg[b-k45qj2qeu3] {
+    position: static;
+    /* justify-content: space-between; */
+    width: 30%;
+    height: auto;
+    padding: 0;
+    background-image: none;
+    /* border: 1px solid red; */
+  }
+
+  header .nav-bkg nav[b-k45qj2qeu3] {
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid white; */
+  }
+
+  .header nav a[b-k45qj2qeu3] {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: none;
+    /* border: 1px solid greenyellow; */
+  }
+
+  .header nav a.phone-box[b-k45qj2qeu3],
+  .header nav a.mail-box[b-k45qj2qeu3] {
+    display: none;
+  }
+  .header nav a:hover[b-k45qj2qeu3] {
+    background-color: transparent;
+    color: #f9aa01;
+  }
+
+  /* .header nav .social-box {
+    position: static;
+    
+    border: 1px solid yellow;
+} */
+  .header nav .social-box[b-k45qj2qeu3] {
+    display: none;
+  }
+  header .icons-header-bkg[b-k45qj2qeu3] {
+    position: static;
+    width: auto;
+    height: auto;
+    background-image: none;
+  }
+
+  header .icons-header[b-k45qj2qeu3] {
+    height: auto;
+    flex-direction: revert;
+    width: 100px;
+    padding: 10px;
+    background-image: none;
+    /* border: 1px solid red; */
+  }
+}
